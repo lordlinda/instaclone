@@ -1,0 +1,13 @@
+.chatHeader{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.chatHeader__info{
+    display: flex;
+    align-items: center;
+}
+.chatHeader__info > p{
+ margin-left: 10px;
+}

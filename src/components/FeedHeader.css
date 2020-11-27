@@ -1,0 +1,11 @@
+.feedHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    background-color: white;
+    border-bottom: 1px solid #dbdbdb;
+}
+.fileInput{
+    display: none;
+}

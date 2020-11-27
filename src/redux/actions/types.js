@@ -1,0 +1,17 @@
+export const GET_POSTS = "GET_POSTS"
+export const SET_USER = 'SET_USER'
+export const SET_PROGRESS = 'SET_PROGRESS'
+export const GET_COMMENTS = ' GET_COMMENTS'
+export const PREVIEW_IMAGE = 'PREVIEW_IMAGE'
+export const SET_USER_PROFILE = 'SET_USER_PROFILE'
+export const GET_NOTIFICATIONS = 'GET_NOTIFICATIONS'
+export const LIKE_POST = 'LIKE_POST'
+export const UNLIKE_POST = 'UNLIKE_POST'
+export const GET_LIKES = "GET_LIKES"
+export const GET_POST = 'GET_POST'
+export const GET_FOLLOWING = 'GET_FOLLOWING'
+export const UNFOLLOW_USER = 'UNFOLLOW_USER'
+export const FOLLOW_USER = 'FOLLOW_USER'
+export const GET__ROOM_MESSAGES = 'GET__ROOM_MESSAGES'
+export const GET_SAVED_POSTS = 'GET_SAVED_POSTS'
+export const LOGOUT = 'LOGOUT'

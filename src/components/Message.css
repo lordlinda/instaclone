@@ -1,0 +1,24 @@
+.message{
+    border:1px solid #dbdbdb;
+    padding: 7px;
+    border-radius: 10px;
+    width: 60%;
+    margin-top: 20px;
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-end;
+    margin-left: 5px;
+}
+.message__username{
+display: none;
+}
+.message__timestamp{
+    font-size: xx-small;
+    float:right;
+    padding: 2px;
+}
+.message__receiver{
+    background-color: #efefef;
+    float:right;
+    margin-right: 5px;
+}

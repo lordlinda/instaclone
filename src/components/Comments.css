@@ -1,0 +1,10 @@
+.comments__posts{
+    display: flex;
+}
+.comments__posts > p{
+    margin-left: 10px;
+}
+.comment__username{
+    font-weight: 500;
+    
+}

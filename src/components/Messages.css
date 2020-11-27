@@ -1,0 +1,16 @@
+.messages{
+    overflow: scroll;
+}
+
+.messages::-webkit-scrollbar{
+    display: none;
+}
+/*Hide scrollbar for IE,Edge and  Firefox*/
+.messages{
+    -ms-overflow-style:none;/*IE and Edge*/
+    scrollbar-width:none;
+}
+.spinner{
+    margin:50px 100px;
+
+}

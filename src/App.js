@@ -1,25 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+import './App.css'
+import { monitorAuthState } from './redux/actions/userActions'
+import { connect } from 'react-redux'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Feed from './pages/Feed'
+import CreatePost from './pages/CreatePost'
+import SignIn from './pages/Signin'
+import Profile from './pages/Profile'
+import Activity from './pages/Activity'
+import PostPage from './pages/PostPage'
+import { getLikes } from './redux/actions/likeActions'
+import { getComments } from './redux/actions/CommentActions'
+import { getPosts } from './redux/actions/postActions'
+import Chat from './pages/Chat'
+import AuthGuard from './components/AuthGuard'
+function App(props) {
+  const { user } = props
 
-function App() {
+  useEffect(() => {
+    props.monitorAuthState()
+  }, [])
+  useEffect(() => {
+    props.getComments()
+  }, [])
+
+  useEffect(() => {
+    props.getPosts()
+  }, [])
+  useEffect(() => {
+    props.getLikes()
+  }, [])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="app">
+      <Router>
+        <Switch>
+          <AuthGuard exact path='/' component={SignIn} />
+          <AuthGuard exact path='/feed' component={Feed} />
+          <AuthGuard exact path='/create/post' component={CreatePost} />
+          <AuthGuard exact path='/profile/:userId' component={Profile} />
+          <AuthGuard exact path='/activity' component={Activity} />
+          <AuthGuard exact path='/chats/:username' component={Chat} />
+          <AuthGuard exact path='/post/:id' component={PostPage} />
+        </Switch>
+      </Router >
+    </div >
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    savedPosts: state.post,
+    user: state.user.user,
+
+
+  }
+}
+export default connect(mapStateToProps, { monitorAuthState, getLikes, getComments, getPosts })(App)
